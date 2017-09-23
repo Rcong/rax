@@ -22,8 +22,8 @@ let Children = {
   toArray(children) {
     if (children == null) return [];
     // flatten children
-    children = flattenChildren(children);
-    return Array.isArray(children) ? children : [].concat(children);
+    children = flattenChildren(children, []);
+    return Array.isArray(children) ? children.filter(child => child !== null) : [].concat(children);
   }
 };
 
